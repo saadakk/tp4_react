@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+body{
+  background-color: black;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +37,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+img{
+  width: 400px;
+  height: 250px;
+}
+#btn1{
+  transform: rotate(180deg);
+  width: 30px;
+  height: 30px;
+  position: relative;
+  left: -35px;
+  top: -150px;
+}
+#btn2{
+  width: 30px;
+  height: 30px;
+  position: relative;
+  left: -425px;
+  top: -150px;
+}
+#cont{
+  margin-top: 200px;
+}
+#hh1{
+  position: relative;
+  left: -30px;
+  top: 0px;
 }

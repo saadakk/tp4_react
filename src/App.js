@@ -1,11 +1,11 @@
-import Comp2 from './comp2';
-
+import Compimg from './Compimg';
+import './App.css'
 function App() {
   
   return (
     <div className="App">
 
-    <Comp2 />
+    <Compimg />
  
     
     </div>
