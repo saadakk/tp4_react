@@ -1,11 +1,11 @@
-import Compimg from './Compimg';
-import './App.css'
+import Todolist from './todolistt/todolist';
+
 function App() {
   
   return (
     <div className="App">
 
-    <Compimg />
+    <Todolist />
  
     
     </div>
