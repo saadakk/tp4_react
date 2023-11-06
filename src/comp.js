@@ -57,24 +57,7 @@ export default function Calcul() {
     //   default:
     //     break;
     // }
-    let h1=document.querySelector("h1")
-    if (input.value>0) {
-     
-     h1.innerHTML="Nouali 3alamiya"
-     h1.style.color="red";
-      
-    }
-    else if (input.value==0) {
-      
-      h1.innerHTML="Badar"
-      h1.style.color="blue";
-       
-     }
-     else{
-      
-      h1.innerHTML="Saad "
-      h1.style.color="black";
-     }
+    
 
  }
  
