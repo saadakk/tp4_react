@@ -1,34 +1,33 @@
- import React, { useState } from 'react'
- 
- export default function Exemple({text,alertFunction}) {
-     let table=["nouali","saad","badar"]
-     let [inc,setInc]=useState(0)
-     const elment= <h1>{table[inc]}</h1>
-     const incf = () => {
-      if (inc==table.length) {
-        setInc(0);
-      }else{
-        setInc(inc+1)
-      }
-      }
-      const decf = () => {
-        if(inc==-1){
-          setInc(table.length-1);
-        }else{
-          setInc(inc-1)
-        }
-     }
-     
-   
-           
-       
-   return (
-     <div>
+import React from 'react'
+import { useState} from 'react'
+import { useEffect } from 'react'
+import axios from 'axios'
+export default function Todolist() {
+  const [array,setArray] = useState([])
+  const [pages, setPages]= useState(1)
+
+  useEffect(()=>{ 
+    axios.get(`https://jsonplaceholder.typicode.com/todos?_limit=${10} &_page=${pages}`).
+    then(res => {return res.data}).
+    then(data => setArray(data))
+  }
+  ,[pages])
+
+  {console.log(array)}
+  return (
+    <div>
+      {array.map((item)=>{
         
-          <button onClick={()=>incf(inc+1)}>inc</button>
-          <button onClick={()=>decf(inc-1)}>dec</button>
-           {elment}
-     </div>
-   )
- }
- 
+        return(
+          
+          <li>user id :{item.id} title: {item.title}</li>
+          
+        )
+       
+      }
+      )
+} 
+      <input type='text' value='next' />
+    </div>
+  )
+}

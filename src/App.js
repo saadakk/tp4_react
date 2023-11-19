@@ -1,11 +1,11 @@
-import Todolist from './todolistt/todolist';
+import APIlist from './apiList/APIlist'
 
 function App() {
   
   return (
     <div className="App">
 
-    <Todolist />
+    <APIlist />
  
     
     </div>

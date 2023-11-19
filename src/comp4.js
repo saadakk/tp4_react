@@ -1,32 +1,65 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 
-export default function Comp4(props) {
-    
-    const [counter,setcounter] = useState(10)
+export default function Carray() {
 
-    const inc= ()=>{
-        let c = counter
-        c++
-        setcounter(c)
-    }
 
-    const dec= ()=>{
-        let c = counter
-        c--
-        setcounter(c)
-    }
 
-    const fchild=(p)=>{
-        alert("sss"+p)
-    }
+const[loisirs,setLoisirs]=useState([
+
+{nom:'Fullstack',group:'203'},
+{nom:'Security',group:'204'},
+{nom:'Cloud',group:'205'}
+
+
+
+])
+
   return (
     <div>
-        <h1 style={{color:'red'}}   onClick={()=>fchild(10)}>{props.gr}</h1>
-        <h2 onClick={props.fparent}>test</h2>
-        <button className='btn btn-warning'>coocococ</button><br/>
-        <input type='button' value='+' onClick={()=>inc()}/>
-        <p>la valeur est {counter}</p>
-        <input type='button' value='-' onClick={()=>dec()}/>
+        <h1>Liste des filieres:</h1>
+      <ul>
+            {
+
+   loisirs.map((el,ind)=>{
+
+    return <li key={ind}>{el.nom}</li>
+
+   })
+
+
+            }
+
+</ul>
+
+
+
+<h1>Tableau des filieres:</h1>
+      <table>
+                    <thead>
+                     <tr>
+                            <th style={{ border: '1px solid #000' }}>Nom</th>
+                            <th style={{ border: '1px solid #000' }}>groupe</th>
+                   
+                     </tr>
+                     </thead>
+                     <tbody>
+            {
+
+   loisirs.map((el,ind)=>{
+
+    return <tr key={ind}>
+        <td style={{ border: '1px solid #000' }}>{el.nom}</td>
+        <td style={{ border: '1px solid #000' }}>{el.group}</td>
+            </tr>
+
+   })
+
+
+            }
+</tbody>
+</table>
+
+
     </div>
   )
 }
